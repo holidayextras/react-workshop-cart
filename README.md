@@ -1,4 +1,17 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Workshop steps to get to this point:
+1. npx create-react-app workshop-cart
+2. Create Payment and Basket components
+3. Setup basic design and content
+
+Next steps:
+1. Pass product props for 'real' content
+2. Update basket to show new content
+3. use existing 'paid' state to update UI (hide basket & update button to show success text)
+4. Add upgrades to the UI
+5. Create total price state and update where shown
+6. Seperate pay block (left hand side of page) to its own component
+
+his project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
