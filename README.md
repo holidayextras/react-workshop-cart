@@ -10,6 +10,7 @@ Next steps:
 4. Add upgrades to the UI
 5. Create total price state and update where shown
 6. Seperate pay block (left hand side of page) to its own component
+7. show useEffect by adding a log every time the total state changes
 
 his project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

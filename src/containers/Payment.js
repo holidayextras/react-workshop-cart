@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Basket from '../components/Basket'
 
 const Payment = () => {
@@ -58,6 +58,10 @@ export default Payment
 //   const makePayment = () => {
 //     setPaid(true)
 //   }
+
+//   useEffect(() => {
+//     console.log('My Total has changed again to: ' + total)
+//   }, [total])
 
 //   return (
 //     <div class="container">
