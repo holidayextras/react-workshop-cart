@@ -1,29 +1,55 @@
 import React, { useState, useEffect } from 'react'
 import Basket from '../components/Basket'
+import PayBlock from '../components/PayBlock'
 
 const Payment = () => {
-  const [paid, setPaid] = useState(false)
   const product = {
     name: 'Room at Trump Tower',
-    price: '$10',
+    price: 10,
     description: 'Bestest product, 5 mins from a road somewhere and a local tree'
   }
+
+  const [paid, setPaid] = useState(false)
+  const [total, setTotal] = useState(product.price)
+
+  const upgrades = [{
+    name: 'Dinner for 900 people',
+    price: 1,
+  },
+  {
+    name: 'Lessons how to backflip',
+    price: 2,
+  }]
 
   const makePayment = () => {
     setPaid(true)
   }
 
+  useEffect(() => {
+    console.log('IM CHANGING TOTAL!!!!!!!', total)
+  }, [total])
+
+  useEffect(() => {
+    console.log('IM PAYING!!!!!!!', paid)
+  }, [paid])
+
+  const setNewTotal = (newUpgradePrice) => {
+    setTotal(total + newUpgradePrice)
+  }
+
   return (
     <div class="container">
       <div className='col-xs-8 text-center'>
-        <h1>Payment Page</h1>
-        <h2>You're booking this insane product!</h2>
-          <button className='btn btn-xl btn-primary' onClick={makePayment}>Pay Now!</button>
-          <p>paid: {paid} total: {product.price}</p>
+        <PayBlock paid={paid} total={total} makePayment={makePayment}/>
       </div>
 
       <div className='col-xs-4'>
-        <Basket product={product}/>
+        {!paid && <Basket
+          total={total}
+          setNewTotal={setNewTotal}
+          product={product}
+          upgrades={upgrades}
+        />}
       </div>
 
     </div>
